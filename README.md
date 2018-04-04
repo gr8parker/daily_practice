@@ -1,5 +1,8 @@
 This is my daily code practice
 
 ## Patterns:
-    - [x] Strategy
-
+    - [*] Strategy
+
+##Algorithms:    
+#### Data Structures
+- [*] Priority Queue (heap)
