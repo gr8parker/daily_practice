@@ -39,7 +39,7 @@ public:
     
     void setWeapon(WeaponBehavior* weaponBehavior)
     {
-        m_weaponBehavior = std::move(std::unique_ptr<WeaponBehavior>(weaponBehavior));
+        m_weaponBehavior.reset(weaponBehavior);
     }
     
 private:
@@ -64,7 +64,7 @@ public:
 
 int main()
 {
-    std::shared_ptr<Character> character(new King());
-    character->setWeapon(new AxeBehavior());
-    character->useWeapon();
+    auto king = std::make_unique<King>();
+    king->setWeapon(new AxeBehavior());
+    king->useWeapon();
 }
